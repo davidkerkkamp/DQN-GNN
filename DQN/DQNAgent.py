@@ -113,7 +113,7 @@ class DQNAgent:
         if self.update_step_counter % self.replace_target_rate == 0:
             self.target_net.load_state_dict(self.net.state_dict())  # Replace target net params
 
-    def save_model(self, path, run_id):  # TODO
+    def save_model(self, path, run_id):
         self.target_net.save_model(f'{path}/target-model-{run_id}.torch')
         self.net.save_model(f'{path}/model-{run_id}.torch')
 
